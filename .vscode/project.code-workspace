@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "../"
+    },
+    {
+      "name": "point-publish",
+      "path": "../apps/publish"
+    },
+    {
+      "name": "point-site",
+      "path": "../apps/site"
+    },
+    {
+      "name": "point-apis",
+      "path": "../packages/apis"
+    },
+    {
+      "name": "point-request",
+      "path": "../packages/request"
+    },
+    {
+      "name": "point-transform",
+      "path": "../packages/transform"
+    }
+  ],
+  "settings": {}
+}
