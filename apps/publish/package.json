@@ -1,12 +1,38 @@
 {
-  "name": "@he110/point-publish",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "point-publish",
+  "displayName": "Point Publish",
+  "version": "0.0.1",
+  "description": "The extension to publish my point",
+  "main": "./out/extension.js",
   "keywords": [],
-  "author": "",
-  "license": "GPL"
+  "publisher": "he110te4m",
+  "author": "he110",
+  "license": "GPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/He110te4m/point"
+  },
+  "activationEvents": [
+    "workspaceContains:**/*"
+  ],
+  "scripts": {
+    "package": "npm run vscode:prepublish && npm run package:vsix",
+    "package:vsix": "vsce package --no-dependencies",
+    "clean:dist": "rimraf out",
+    "vscode:prepublish": "npm run clean:dist && npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "esbuild": "^0.17.6",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+  },
+  "contributes": {
+  }
 }
