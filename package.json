@@ -5,6 +5,9 @@
   "keywords": [],
   "author": "",
   "license": "GPL",
+  "engines": {
+    "node": ">=14.13.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.1",
     "@types/glob": "^8.0.1",

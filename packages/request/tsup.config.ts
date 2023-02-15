@@ -3,7 +3,7 @@ import glob from 'glob'
 
 export default defineConfig(() => {
   return {
-    entry: glob.sync('src/*/index.ts').concat('src/main.ts'),
+    entry: glob.sync('src/*/index.ts'),
     format: ['esm', 'cjs', 'iife'],
     outExtension({ format }) {
       return {
@@ -12,11 +12,12 @@ export default defineConfig(() => {
     },
     dts: true,
     splitting: true,
-    minify: false,
+    minify: true,
     sourcemap: true,
     clean: true,
     treeshake: true,
-    noExternal: [],
+    noExternal: [
+    ],
     outDir: './libs',
   }
 })

@@ -1,5 +1,5 @@
 {
-  "name": "@he110/point-apis",
+  "name": "@he110/point-request",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -7,12 +7,6 @@
     "node": ">=14.13.0"
   },
   "exports": {
-    ".": {
-      "import": "./libs/main.mjs",
-      "require": "./libs/main.cjs",
-      "default": "./libs/main.global.js",
-      "types": "./libs/main.d.ts"
-    },
     "./libs/*": {
       "import": "./libs/*/index.mjs",
       "require": "./libs/*/index.cjs",
@@ -26,6 +20,9 @@
   "keywords": [],
   "author": "",
   "license": "GPL",
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  },
   "devDependencies": {
     "tsup": "^6.6.3"
   },
