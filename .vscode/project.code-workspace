@@ -17,10 +17,6 @@
       "path": "../packages/apis"
     },
     {
-      "name": "package-request",
-      "path": "../packages/request"
-    },
-    {
       "name": "package-transform",
       "path": "../packages/transform"
     }

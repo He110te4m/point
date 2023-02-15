@@ -2,11 +2,25 @@
   "name": "@he110/point-apis",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "exports": {
+    "./libs/*": {
+      "import": "./libs/*/index.mjs",
+      "require": "./libs/*/index.cjs",
+      "default": "./libs/*/index.global.js",
+      "types": "./libs/*/index.d.ts"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf libs && tsup"
   },
   "keywords": [],
   "author": "",
-  "license": "GPL"
+  "license": "GPL",
+  "devDependencies": {
+    "tsup": "^6.6.3"
+  },
+  "volta": {
+    "node": "14.19.1"
+  }
 }
