@@ -5,23 +5,23 @@
       "path": "../"
     },
     {
-      "name": "point-publish",
+      "name": "app-publish",
       "path": "../apps/publish"
     },
     {
-      "name": "point-site",
+      "name": "app-site",
       "path": "../apps/site"
     },
     {
-      "name": "point-apis",
+      "name": "package-apis",
       "path": "../packages/apis"
     },
     {
-      "name": "point-request",
+      "name": "package-request",
       "path": "../packages/request"
     },
     {
-      "name": "point-transform",
+      "name": "package-transform",
       "path": "../packages/transform"
     }
   ],
