@@ -7,11 +7,11 @@
     "node": ">=14.13.0"
   },
   "exports": {
-    "./libs/*": {
-      "import": "./libs/*/index.mjs",
-      "require": "./libs/*/index.cjs",
-      "default": "./libs/*/index.global.js",
-      "types": "./libs/*/index.d.ts"
+    ".": {
+      "import": "./libs/main.mjs",
+      "require": "./libs/main.cjs",
+      "default": "./libs/main.global.js",
+      "types": "./libs/main.d.ts"
     }
   },
   "scripts": {
@@ -21,9 +21,12 @@
   "author": "",
   "license": "GPL",
   "dependencies": {
-    "node-fetch": "^3.3.0"
+    "axios": "1.2.3",
+    "klona": "^2.0.6",
+    "qs": "^6.11.0"
   },
   "devDependencies": {
+    "@types/qs": "^6.9.7",
     "tsup": "^6.6.3"
   },
   "volta": {

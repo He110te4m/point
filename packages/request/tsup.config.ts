@@ -1,9 +1,8 @@
 import { type Format, defineConfig } from 'tsup'
-import glob from 'glob'
 
 export default defineConfig(() => {
   return {
-    entry: glob.sync('src/*/index.ts'),
+    entry: ['./src/main.ts'],
     format: ['esm', 'cjs', 'iife'],
     outExtension({ format }) {
       return {
@@ -17,6 +16,8 @@ export default defineConfig(() => {
     clean: true,
     treeshake: true,
     noExternal: [
+      'klona',
+      'qs',
     ],
     outDir: './libs',
   }
