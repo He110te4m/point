@@ -1,13 +1,3 @@
-type FetchFn = typeof fetch
+import { Request } from '@he110/point-request'
 
-export interface ClientOptions {
-  fetch: FetchFn
-}
-
-export class ApiClient {
-  #fetch: FetchFn
-
-  constructor({ fetch }: ClientOptions) {
-    this.#fetch = fetch
-  }
-}
+export const request = new Request()

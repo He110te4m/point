@@ -21,15 +21,26 @@
     }
   },
   "scripts": {
-    "build": "rimraf libs && tsup"
+    "prepare": "npm run build",
+    "clean:dist": "rimraf libs",
+    "build:browser": "tsup --platform browser",
+    "build:node": "tsup --platform node",
+    "build": "npm run clean:dist && npm run build:browser && npm run build:node",
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint .",
+    "lint:eslint-fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
-  "license": "GPL",
+  "license": "GPL-v3",
   "devDependencies": {
+    "@he110/utils": "^0.4.0",
     "tsup": "^6.6.3"
   },
   "volta": {
     "node": "14.19.1"
+  },
+  "dependencies": {
+    "@he110/point-request": "workspace:^1.0.0"
   }
 }

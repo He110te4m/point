@@ -6,27 +6,37 @@
   "engines": {
     "node": ">=14.13.0"
   },
-  "exports": {
-    "./libs/*": {
-      "import": "./libs/*/index.mjs",
-      "require": "./libs/*/index.cjs",
-      "default": "./libs/*/index.global.js",
-      "types": "./libs/*/index.d.ts"
-    }
-  },
+  "types": "./libs/node/index.d.ts",
+  "browser": "./libs/browser/index.mjs",
+  "main": "./libs/node/index.mjs",
+  "default": "./libs/node/index.mjs",
+  "files": [
+    "libs"
+  ],
   "scripts": {
-    "build": "rimraf libs && tsup"
+    "prepare": "npm run build",
+    "clean:dist": "rimraf libs",
+    "build:browser": "tsup --platform browser",
+    "build:node": "tsup --platform node",
+    "build": "npm run clean:dist && npm run build:browser && npm run build:node",
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint .",
+    "lint:eslint-fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
-  "license": "GPL",
-  "dependencies": {
-    "node-fetch": "^3.3.0"
-  },
+  "license": "GPL-v3",
   "devDependencies": {
+    "@he110/utils": "^0.4.0",
+    "@types/qs": "^6.9.7",
     "tsup": "^6.6.3"
   },
   "volta": {
     "node": "14.19.1"
+  },
+  "dependencies": {
+    "axios": "~1.1.3",
+    "klona": "^2.0.6",
+    "qs": "^6.11.0"
   }
 }

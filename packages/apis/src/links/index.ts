@@ -1,5 +1,3 @@
-import type { ApiClient } from '../client'
-
-export function useLinkFetch(client: ApiClient) {
+export function useLinkFetch() {
   return {}
 }

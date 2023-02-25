@@ -1,10 +1,12 @@
-import { type Format, defineConfig } from 'tsup'
+import { type Options, defineConfig } from 'tsup'
 import glob from 'glob'
+import { getExtensionByFormat } from '@he110/utils'
 
-export default defineConfig(() => {
+export default defineConfig(({ platform }) => {
   return {
-    entry: glob.sync('src/*/index.ts'),
-    format: ['esm', 'cjs', 'iife'],
+    ...getConfig(platform),
+    entry: glob.sync('src/index.ts'),
+    format: ['esm'],
     outExtension({ format }) {
       return {
         js: getExtensionByFormat(format),
@@ -13,36 +15,20 @@ export default defineConfig(() => {
     dts: true,
     splitting: true,
     minify: true,
-    sourcemap: true,
+    sourcemap: false,
     clean: true,
     treeshake: true,
     noExternal: [
+      'axios',
+      'klona',
+      'qs',
     ],
-    outDir: './libs',
   }
 })
 
-//#region format extension
-
-function getExtensionByFormat(format: Format) {
-  let ext = '.js'
-  switch (format) {
-    case 'esm':
-      ext = '.mjs'
-      break
-    case 'cjs':
-      ext = '.cjs'
-      break
-    case 'iife':
-      ext = '.global.js'
-      break
-    default:
-      // eslint-disable-next-line no-case-declarations
-      const n: never = format
-      break
+function getConfig(platform: Options['platform'] = 'node'): Options {
+  return {
+    platform,
+    outDir: `./libs/${platform}`,
   }
-
-  return ext
 }
-
-//#endregion

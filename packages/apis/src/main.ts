@@ -1,5 +1,4 @@
 export * from './articles'
-export * from './client'
 export * from './links'
 export * from './site'
 export * from './socials'

@@ -18,7 +18,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "rootDir": ".",
-    "outDir": "dist",
+    "outDir": "libs",
     "types": [
       "node"
     ]
@@ -28,7 +28,6 @@
     "src/**/*.d.ts"
   ],
   "exclude": [
-    "node_modules",
     "libs"
   ]
 }
