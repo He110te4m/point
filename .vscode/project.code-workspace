@@ -21,6 +21,10 @@
       "path": "../packages/request"
     },
     {
+      "name": "package-composables",
+      "path": "../packages/composables"
+    },
+    {
       "name": "package-transform",
       "path": "../packages/transform"
     }

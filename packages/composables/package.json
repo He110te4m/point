@@ -1,0 +1,41 @@
+{
+  "name": "@he110/point-composables",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "engines": {
+    "node": ">=14.13.0"
+  },
+  "types": "./libs/index.d.ts",
+  "module": "./libs/index.mjs",
+  "main": "./libs/index.cjs",
+  "default": "./libs/index.global.js",
+  "files": [
+    "libs"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "clean:dist": "rimraf libs",
+    "build": "npm run clean:dist && tsup",
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint .",
+    "lint:eslint-fix": "eslint . --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-v3",
+  "peerDependencies": {
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@he110/utils": "^0.4.0",
+    "tsup": "^6.6.3",
+    "vue": "^3.2.47"
+  },
+  "volta": {
+    "node": "14.19.1"
+  },
+  "dependencies": {
+    "klona": "^2.0.6"
+  }
+}

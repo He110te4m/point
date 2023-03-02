@@ -22,26 +22,25 @@ export default defineConfig(() => {
     },
     plugins: [
       vue(),
-      Page(),
+
+      Page({
+        dirs: [
+          'src/pages',
+        ],
+      }),
 
       // https://github.com/antfu/unplugin-auto-import
       AutoImport({
         imports: [
           'vue',
           'vue-router',
-          '@vueuse/core',
         ],
         dts: 'types/auto-import.d.ts',
-        dirs: [
-        ],
-        vueTemplate: true,
       }),
 
       // https://github.com/antfu/vite-plugin-components
       Components({
         dts: 'types/components.d.ts',
-        globs: [
-        ],
       }),
 
       Inspect(),
