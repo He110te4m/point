@@ -28,7 +28,7 @@ interface FractalTreeDrawConfig {
   thickness: number
 }
 
-type PruningFn = (config: FractalTreeDrawConfig) => boolean
+type PruningFn = (depth: number, config: FractalTreeDrawConfig) => boolean
 
 type FractalTreeOption = {
   origins: FractalTreePoint[]
@@ -58,6 +58,10 @@ export function drawFractalTree(canvasEl: HTMLCanvasElement, options: FractalTre
   const animationConfig = formatAnimateConfig(animationUserConfig)
   const drawConfigs = formatTreeOriginsOption(drawUserConfig)
   drawConfigs.forEach(config => drawAllBranch(ctx, config, animationConfig))
+
+  return {
+    clear: () => ctx.clearRect(0, 0, canvasEl.width, canvasEl.height),
+  }
 }
 
 //#region draw branch
@@ -87,6 +91,7 @@ interface RunOptions {
 }
 
 function makeRun({ ctx, generation, interval, configsList, pruning }: MakeRunOptions) {
+  let depth = 0
   return function run({ startTime, lastAnimationID }: RunOptions) {
     const animationID = requestAnimationFrame(() => {
       const currentTime = performance.now()
@@ -103,7 +108,7 @@ function makeRun({ ctx, generation, interval, configsList, pruning }: MakeRunOpt
       configs.forEach(config => drawBranch(ctx, config))
 
       const nextConfigs = getNextConfigs(generation, configs)
-        .filter(pruning)
+        .filter(config => pruning(depth++, config))
       configsList.push(nextConfigs)
       run({ startTime: currentTime, lastAnimationID: animationID })
     })

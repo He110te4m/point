@@ -27,6 +27,7 @@ export default defineConfig(() => {
         dirs: [
           'src/pages',
         ],
+        extensions: ['vue'],
       }),
 
       // https://github.com/antfu/unplugin-auto-import
