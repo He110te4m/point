@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  NavMenu
+  <div>sidebar</div>
 </template>

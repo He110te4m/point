@@ -13,11 +13,14 @@
   "dependencies": {
     "@he110/point-composables": "workspace:^1.0.0",
     "@he110/utils": "^0.4.0",
+    "@he110/vue-headless": "^1.0.0",
     "fp-ts": "^2.13.1",
     "vue": "^3.2.47",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^0.10.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/compiler-sfc": "^3.2.47",
     "unplugin-auto-import": "^0.15.0",
