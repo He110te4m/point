@@ -1,4 +1,11 @@
 app:
   global:
-    title:
-      site: He110's Blog
+    site:
+      title: He110's Blog
+    nav:
+      index: 首页
+      articles: 文章
+      article_frontend: 前端
+      article_php: PHP
+      notes: 随笔
+      aboutme: 关于我

@@ -29,5 +29,9 @@
       "path": "../packages/transform"
     }
   ],
-  "settings": {}
+  "settings": {
+    "i18n-ally.localesPaths": [
+      "apps/site/public/locales"
+    ]
+  }
 }

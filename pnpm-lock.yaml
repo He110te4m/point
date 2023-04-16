@@ -34,7 +34,7 @@ importers:
     specifiers:
       '@he110/point-composables': workspace:^1.0.0
       '@he110/utils': ^0.4.0
-      '@he110/vue-headless': ^1.0.0
+      '@he110/vue-headless': ^1.0.1
       '@intlify/unplugin-vue-i18n': ^0.10.0
       '@vitejs/plugin-vue': ^4.0.0
       '@vue/compiler-sfc': ^3.2.47
@@ -51,7 +51,7 @@ importers:
     dependencies:
       '@he110/point-composables': link:../../packages/composables
       '@he110/utils': 0.4.0
-      '@he110/vue-headless': 1.0.0_lavcef455lp3wtm2mcdrwhgymm
+      '@he110/vue-headless': 1.0.1_lavcef455lp3wtm2mcdrwhgymm
       fp-ts: 2.13.1
       vue: 3.2.47
       vue-i18n: 9.2.2_vue@3.2.47
@@ -844,8 +844,8 @@ packages:
     dependencies:
       fp-ts: 2.13.1
 
-  /@he110/vue-headless/1.0.0_lavcef455lp3wtm2mcdrwhgymm:
-    resolution: {integrity: sha512-i3o1zhK0WlvtzzDc7QRe/r7Z6YrjCDSylIvH54HnnWWtZCHM0APxT0cdZY7X81hy3zp7bUsBxNtnCs6QIhULAg==}
+  /@he110/vue-headless/1.0.1_lavcef455lp3wtm2mcdrwhgymm:
+    resolution: {integrity: sha512-+VHtgcXxITrPVIj19RBK76gX0psn+FB58PsFFIv0vsojFZWmggr9neKfn6RBp8rRZqWyyc7vSkouBk20a4KrIw==}
     peerDependencies:
       vue: ^3.2.47
       vue-router: ^4.1.6
