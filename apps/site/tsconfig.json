@@ -27,6 +27,11 @@
       ]
     }
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "types/*.d.ts",
+  ],
   "exclude": [
     "dist",
     "node_modules",

@@ -1,23 +1,9 @@
 <script setup lang="ts">
-import { useBg } from './index/composables/useBg'
+const { t } = useI18n()
 
-const canvas = ref<HTMLCanvasElement>()
-useBg(canvas)
+const text = t('app.global.title.site')
 </script>
 
 <template>
-  <div>
-    <canvas ref="canvas" class="bg-canvas" />
-  </div>
+  <div>{{ text }}</div>
 </template>
-
-<style scoped>
-.bg-canvas {
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-</style>
